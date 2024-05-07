@@ -1,0 +1,112 @@
+-------------------1----------------
+
+select  country 
+from software_houses
+where  country LIKE '%United States%'
+
+
+-------------------2----------------
+
+select city
+from players
+where city LIKE '%Rogahnland%'
+
+-------------------3----------------
+
+select name
+from players
+where name LIKE '%a'
+
+-------------------4----------------
+
+select  player_id
+from reviews 
+where player_id = 800 ;
+
+-------------------5----------------
+
+select year
+from tournaments
+where year = 2015;
+
+-------------------6----------------
+
+6- Selezionare tutti i premi che contengono nella descrizione la parola 'facere' (2)
+
+-------------------7----------------
+
+ Selezionare tutti i videogame che hanno la categoria 2 (FPS) o 6 (RPG), mostrandoli una sola volta (del videogioco vogliamo solo l'ID) (287)
+select pegi_label_id
+from pegi_label_videogame
+where pegi_label_id IN (2,  6);
+
+-------------------8----------------
+
+select * 
+from reviews
+where rating in (2, 3, 4)
+
+-------------------9----------------
+
+Selezionare tutti i dati dei videogiochi rilasciati nell'anno 2020 (46)
+select created_at
+from videogames
+where  YEAR(created_at)=2020;
+
+-------------------10----------------
+
+10- Selezionare gli id dei videogame che hanno ricevuto almeno una recensione da stelle, mostrandoli una sola volta (443)
+select videogame_id
+from reviews
+where rating > 1;
+
+
+
+
+
+
+
+
+secondo blocco 
+
+-------------------1----------------
+
+select country, COUNT(*) AS numero_software_house
+from software_houses
+GRoup by country ;
+
+-------------------2----------------
+
+select videogame_id , COUNT(*) AS numero_revies
+from reviews
+group by videogame_id
+
+-------------------3----------------
+
+select pegi_label_id, COUNT(*) as numero_pegi 
+from pegi_label_videogame
+group by pegi_label_id;
+
+-------------------4----------------
+
+select year(release_date) as anno, COUNT(*) AS rilascio_videogiochi
+from videogames
+group by YEAR(release_date);
+
+
+-------------------5----------------
+
+select device_id, CoUNT(*) as nummero_devece
+from device_videogame
+group by device_id
+
+-------------------6----------------
+
+Ordinare i videogame in base alla media delle recensioni (del videogioco vogliamo solo l'ID) (500)
+
+
+
+
+terza parte 
+
+-------------------1----------------
